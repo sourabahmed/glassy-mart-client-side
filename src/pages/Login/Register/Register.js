@@ -1,14 +1,14 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link, useHistory } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
     const history = useHistory();
 
-    const {user, registerUser} = useFirebase();
+    const {user, registerUser} = useAuth();
 
     const onSubmit = data => {
         if(data.password !== data.password2){

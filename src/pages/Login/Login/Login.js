@@ -1,18 +1,18 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link , useHistory, useLocation} from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const {user, logInUser} = useFirebase();
+    const {logInUser} = useAuth();
 
     const location = useLocation();
     const history = useHistory();
 
     const onSubmit = data => {
-        logInUser(data.email, data.password, history, location)
+        logInUser(data.email, data.password, location, history)
     }
     return (
         <div>

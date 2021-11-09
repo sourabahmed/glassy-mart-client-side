@@ -11,7 +11,6 @@ const useFirebase = () => {
 
     const auth = getAuth();
     const registerUser = (name, email, password, history) => {
-        console.log('name', name, 'email', email, password);
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
@@ -41,31 +40,22 @@ const useFirebase = () => {
 
     const logInUser = (email, password, location, history) => {
         setIsLoading(true);
+        console.log(email, password);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
                 history.replace(destination)
-                const user = userCredential.user;
-                console.log(user);
-                setUser(user);
                 setAuthError('');
+                const user = userCredential.user;
+                setUser(user);
             })
             .catch((error) => {
-                // const errorCode = error.code;
                 const errorMessage = error.message;
                 setAuthError(errorMessage);
             })
             .finally(() => setIsLoading(false));
     }
 
-
-    const logOut = () => {
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        });
-    }
 
     // observer
     useEffect(() => {
@@ -80,6 +70,15 @@ const useFirebase = () => {
         });
         return () => unsubscribe;
     }, [])
+
+
+    const logOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
 
 
     return {
