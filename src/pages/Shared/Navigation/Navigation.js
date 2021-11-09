@@ -18,6 +18,9 @@ const Navigation = () => {
                         <Nav.Link >
                             <Link to='/myorders'>My Orders</Link>
                         </Nav.Link>
+                        <Nav.Link >
+                            <Link to='/addSunglass'>Add Sunglass</Link>
+                        </Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>

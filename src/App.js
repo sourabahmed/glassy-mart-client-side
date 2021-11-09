@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthContext/AuthContext';
+import AddSunglass from './pages/Home/AddSunglass/AddSunglass';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
@@ -26,8 +27,11 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
-            <PrivateRoute to='/myorders'>
+            <PrivateRoute path='/myorders'>
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute path='/addSunglass'>
+              <AddSunglass></AddSunglass>
             </PrivateRoute>
           </Switch>
         </Router>

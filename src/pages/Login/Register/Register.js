@@ -43,7 +43,7 @@ const Register = () => {
                 <br/>
                 <Link to='/login'>Already Registered? Please Login.</Link>
                 <br/>
-                <input type="submit" />
+                <input type="submit" value="Register" />
             </form>
         </div>
     );
