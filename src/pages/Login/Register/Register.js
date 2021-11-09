@@ -1,17 +1,20 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import useFirebase from '../../../hooks/useFirebase';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
+    const history = useHistory();
+
+    const {user, registerUser} = useFirebase();
+
     const onSubmit = data => {
-        if(data.password === data.password2){
-            console.log(data);
-        }
-        else{
+        if(data.password !== data.password2){
             alert('passwords does not matched')
         }
+        registerUser(data.name, data.email, data.password, history)
     }
     return (
         <div>
@@ -19,7 +22,7 @@ const Register = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
-                    Name: <br />
+                    Name:{user?.name} <br />
                     <input type="text" {...register("name")} />
                 </label>
                 <br/>
