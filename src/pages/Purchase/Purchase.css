@@ -1,0 +1,16 @@
+.purchase{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin: 20px 100px;
+}
+.details{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 0 5px 2px rgb(129, 122, 122);
+}
+.img{
+    
+    margin: 0 auto;
+
+}

@@ -17,6 +17,8 @@ const useFirebase = () => {
                 const user = userCredential.user;
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                // save user information
+                saveUser(email, name);
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -80,6 +82,11 @@ const useFirebase = () => {
         });
     }
 
+    // save user to databse
+
+    const saveUser = (name, displayName) => {
+
+    }
 
     return {
         user,
