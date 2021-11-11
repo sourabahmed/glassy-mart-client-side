@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth'
 
 const Navigation = () => {
-    const{user, logOut} = useAuth();
+    const { user, logOut } = useAuth();
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
@@ -24,18 +24,21 @@ const Navigation = () => {
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
+                        <Nav.Link >
+                            {user.email && <Link to='/dashboard'>Dashboard</Link>}
+                        </Nav.Link>
                         <Nav.Link>{user.displayName}</Nav.Link>
                         {/* <Nav.Link >
                             <Link to='/login'>Login</Link>
                         </Nav.Link> */}
                         <Nav.Link >
-                            
+
                             {
-                                user.email? <button onClick={logOut} className="btn btn-danger">Logout</button>:
-                                <button className="btn btn-danger"><Link to="/login">Login</Link></button>
+                                user.email ? <button onClick={logOut} className="btn btn-danger">Logout</button> :
+                                    <button className="btn btn-danger"><Link to="/login">Login</Link></button>
                             }
-                                
-                            
+
+
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
