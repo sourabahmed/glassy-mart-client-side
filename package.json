@@ -44,7 +44,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/programming-hero-web-course-4/niche-website-client-side-sourabahmed.git"
+    "url": "/"
   },
   "keywords": [],
   "author": "",
@@ -52,5 +52,5 @@
   "bugs": {
     "url": "https://github.com/programming-hero-web-course-4/niche-website-client-side-sourabahmed/issues"
   },
-  "homepage": "https://github.com/programming-hero-web-course-4/niche-website-client-side-sourabahmed#readme"
+  "homepage": "/"
 }
