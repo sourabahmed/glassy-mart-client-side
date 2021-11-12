@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Service.css'
+import './Product.css'
 
-const Service = ({ service }) => {
+const Product = ({ service }) => {
     const { productName, url, price , _id, description} = service;
     return (
-        <div className="service">
+        <div className="product">
             <div>
                 <img className="img-fluid" src={url} alt="" />
             </div>
@@ -19,4 +19,4 @@ const Service = ({ service }) => {
     );
 };
 
-export default Service;
+export default Product;

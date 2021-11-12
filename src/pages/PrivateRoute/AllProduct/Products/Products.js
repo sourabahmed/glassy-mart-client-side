@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Service from '../Service/Service';
-import './Services.css'
+import Product from '../Product/Product';
+import './Products.css'
 
-const Services = () => {
+const Products = () => {
     const [services, setServices] = useState([]);
     console.log(services);
     useEffect(() => {
@@ -12,16 +12,16 @@ const Services = () => {
     }, [])
     return (
         <div>
-            <div className="services">
+            <div className="products">
                 {
-                    services?.slice(0, 6).map(service => <Service
+                    services?.map(service => <Product
                         service={service}
                         key={service._id}
-                    ></Service>)
+                    ></Product>)
                 }
             </div>
         </div>
     );
 };
 
-export default Services;
+export default Products;

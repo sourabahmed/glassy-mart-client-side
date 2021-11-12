@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
-import MyOrders from './pages/MyOrders/MyOrders';
+import AllProduct from './pages/PrivateRoute/AllProduct/AllProduct';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Purchase from './pages/Purchase/Purchase';
 
@@ -28,8 +28,8 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
-            <PrivateRoute path='/myorders'>
-              <MyOrders></MyOrders>
+            <PrivateRoute path='/allProduct'>
+              <AllProduct></AllProduct>
             </PrivateRoute>
             <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>

@@ -8,7 +8,7 @@ const Navigation = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand href="#home">Glassy Mart</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -16,7 +16,7 @@ const Navigation = () => {
                             <Link to='/home'>Home</Link>
                         </Nav.Link>
                         <Nav.Link >
-                            <Link to='/myorders'>My Orders</Link>
+                            <Link to='/allProduct'>All-Product</Link>
                         </Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
