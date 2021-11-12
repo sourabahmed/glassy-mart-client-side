@@ -29,7 +29,7 @@ const Login = () => {
                     <br />
                     <input className="btn btn-danger" type="submit" value="Login" />
                     <br />
-                    <Link className="text-decoration-none" to='/register'>New User? Please Register.</Link>
+                    <Link className="text-decoration-none " to='/register'>New User? Please Register.</Link>
                 </form>
             </div>
         </div>

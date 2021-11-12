@@ -14,7 +14,9 @@ const ManageOrders = () => {
     },[isDeleted])
 
 const handleDeleteOrder = id => {
-    fetch(`https://protected-plateau-17265.herokuapp.com/deleteOrder/${id}`, {
+    const sure = window.confirm("Are your sure you want to delete this order");
+    if(sure){
+        fetch(`https://protected-plateau-17265.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json'
@@ -23,8 +25,12 @@ const handleDeleteOrder = id => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            if(data.acknowledged){
+                alert('order deleted')
+            }
             setIsDeleted(true);
         })
+    }
         
 }
     return (

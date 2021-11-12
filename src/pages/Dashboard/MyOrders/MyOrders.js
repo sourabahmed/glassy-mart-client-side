@@ -35,7 +35,6 @@ const handleDeleteOrder = id => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Product Name</th>
                         <th>Price</th>
@@ -47,7 +46,6 @@ const handleDeleteOrder = id => {
                     {
                         orders.filter(data => data?.email === user?.email).map(order =>
                             <tr key={order._id}>
-                                <td>{order.index}</td>
                                 <td>{order.name}</td>
                                 <td>{order.productName}</td>
                                 <td>{order.price}</td>

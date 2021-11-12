@@ -8,7 +8,7 @@ const Register = () => {
     const { register, handleSubmit } = useForm();
     const history = useHistory();
 
-    const { user, registerUser } = useAuth();
+    const {registerUser } = useAuth();
 
     const onSubmit = data => {
         if (data.password !== data.password2) {
@@ -39,7 +39,7 @@ const Register = () => {
                     <br />
                     <input className="my-2 btn btn-danger" type="submit" value="Register" />
                     <br />
-                    <Link className="my-2" to='/login'>Already Registered? <br /> Please Login.</Link>
+                    <Link className="my-2 text-decoration-none" to='/login'>Already Registered? <br /> Please Login.</Link>
                 </form>
             </div>
         </div>

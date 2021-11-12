@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import Navigation from '../Shared/Navigation/Navigation';
+import Footer from '../Shared/Footer/Footer'
 import { Link } from 'react-router-dom';
 import './Purchase.css'
 import useAuth from '../../hooks/useAuth';
@@ -38,8 +39,6 @@ const Purchase = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <h2>This is Purchase {service.productName}</h2>
-
             <div  className="purchase">
                 <div>
                     <div className="details">
@@ -56,16 +55,18 @@ const Purchase = () => {
                 </div>
 
                 <div className="order">
+                <h2 className="m-3">Order Now</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input defaultValue={user?.displayName} {...register("name")} /> <br />
-                        <input defaultValue={user?.email}  {...register("email")} /> <br />
-                        <input defaultValue={service?.productName}  {...register("productName")} /> <br />
-                        <input defaultValue={service?.price}  {...register("price")} /> <br />
-                        <input {...register("phone")} placeholder="your phone number"/> <br />
-                        <input type="submit" />
+                        <input defaultValue={user?.displayName} className="form-control" id="exampleFormControlInput1" {...register("name")} /> <br />
+                        <input defaultValue={user?.email} className="form-control" id="exampleFormControlInput1" {...register("email")} /> <br />
+                        <input defaultValue={service?.productName} className="form-control" id="exampleFormControlInput1" {...register("productName")} /> <br />
+                        <input defaultValue={service?.price} className="form-control" id="exampleFormControlInput1" {...register("price")} /> <br />
+                        <input className="form-control" id="exampleFormControlInput1" {...register("phone")} placeholder="your phone number"/> <br />
+                        <input className="btn btn-danger" type="submit" />
                     </form>
                 </div>
             </div>
+           <Footer></Footer> 
         </div>
     );
 };

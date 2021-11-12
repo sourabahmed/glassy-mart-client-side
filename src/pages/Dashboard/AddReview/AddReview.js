@@ -22,11 +22,11 @@ const AddReview = () => {
     return (
         <div>
             <h2>This is Add Review</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue={user?.displayName} {...register("name")} /> <br />
-                <input {...register("description")} placeholder="Write a description"/> <br />
-                <input type="number" {...register("rating", { min: 1, max: 5 })} placeholder="Rating"/> <br />
-                <input type="submit" />
+            <form className="m-5" onSubmit={handleSubmit(onSubmit)}>
+                <input defaultValue={user?.displayName} className="form-control" id="exampleFormControlInput1"  {...register("name")} /> <br />
+                <input {...register("description")} className="form-control" id="exampleFormControlInput1"  placeholder="Write a description"/> <br />
+                <input type="number" className="form-control" id="exampleFormControlInput1" {...register("rating", { min: 1, max: 5 })} placeholder="Rating"/> <br />
+                <input className="btn btn-danger" type="submit" />
             </form>
         </div>
     );

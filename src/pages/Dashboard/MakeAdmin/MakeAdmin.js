@@ -17,11 +17,11 @@ const MakeAdmin = () => {
         })
     }
     return (
-        <div>
-            <h2>This is make Admin</h2>
+        <div className="m-5">
+            <h2> Make an Admin</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="email" {...register("email")} />
-                <input type="submit" />
+                <input type="email" className=" form-control" id="exampleFormControlInput1" placeholder="Email" {...register("email")} /> <br />
+                <input type="submit" className="btn btn-danger" value="Add" />
             </form>
         </div>
     );
