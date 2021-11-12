@@ -1,6 +1,6 @@
 # Glassy Mart
 
-This is a sunglass shop. Anyone can buy several type of sunglass.
+This is a sunglass shop. Anyone can buy several type of sunglass. This is client side.
 
 ## Objective
 
