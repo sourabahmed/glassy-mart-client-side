@@ -1,12 +1,13 @@
 import React from 'react';
+import './Review.css'
 
 const Review = ({review}) => {
     const{name, description, rating} = review;
     return (
-        <div>
-            <h3>{name}</h3>
+        <div className="review">
+            <h5>{name}</h5>
             <p>{description}</p>
-            <h4>Rating: {rating} out of 5</h4>
+            <h6 className="text-danger">Rating: {rating} out of 5</h6>
         </div>
     );
 };

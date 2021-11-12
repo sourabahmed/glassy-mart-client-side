@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import AllProduct from './pages/PrivateRoute/AllProduct/AllProduct';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Purchase from './pages/Purchase/Purchase';
@@ -37,6 +38,9 @@ function App() {
             <PrivateRoute path='/dashboard'>
               <Dashboard></Dashboard>
             </PrivateRoute>
+            <Route path='*'>
+              <NotFoundPage></NotFoundPage>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

@@ -40,7 +40,7 @@ const Dashboard = () => {
             <div className="col-sm-12 col-lg-9">
                 <Switch>
                     <Route exact path={path}>
-                        <MyOrders></MyOrders>
+                        <Payment></Payment>
                     </Route>
                     <Route exact path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
