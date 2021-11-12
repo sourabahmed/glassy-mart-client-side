@@ -8,10 +8,10 @@ const Register = () => {
     const { register, handleSubmit } = useForm();
     const history = useHistory();
 
-    const {user, registerUser} = useAuth();
+    const { user, registerUser } = useAuth();
 
     const onSubmit = data => {
-        if(data.password !== data.password2){
+        if (data.password !== data.password2) {
             alert('passwords does not matched')
         }
         registerUser(data.name, data.email, data.password, history)
@@ -19,32 +19,29 @@ const Register = () => {
     return (
         <div>
             <Navigation></Navigation>
-
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label>
-                    Name:{user?.name} <br />
-                    <input type="text" {...register("name")} />
-                </label>
-                <br/>
-                <label>
-                    Email: <br />
-                    <input type="email" {...register("email")} />
-                </label>
-                <br/>
-                <label>
-                    Password: <br/>
-                    <input type="password" {...register("password")} />
-                </label>
-                <br/>
-                <label>
-                    Re-enter-password: <br/>
-                    <input type="password" {...register("password2")} />
-                </label>
-                <br/>
-                <Link to='/login'>Already Registered? Please Login.</Link>
-                <br/>
-                <input type="submit" value="Register" />
-            </form>
+            <div className="m-5">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <label>
+                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Full Name" {...register("name")} />
+                    </label>
+                    <br />
+                    <label className="my-2">
+                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email" {...register("email")} />
+                    </label>
+                    <br />
+                    <label className="my-2">
+                        <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="Password" {...register("password")} />
+                    </label>
+                    <br />
+                    <label className="my-2">
+                        <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="Re-enter-password" {...register("password2")} />
+                    </label>
+                    <br />
+                    <input className="my-2 btn btn-danger" type="submit" value="Register" />
+                    <br />
+                    <Link className="my-2" to='/login'>Already Registered? <br /> Please Login.</Link>
+                </form>
+            </div>
         </div>
     );
 };

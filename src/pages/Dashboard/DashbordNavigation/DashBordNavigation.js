@@ -7,9 +7,9 @@ const DashBordNavigation = () => {
     return (
         <Navbar bg="light" variant="light">
             <Container>
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand >Glassy Mart</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link ><Link to='/home'>Home</Link></Nav.Link>
+                    <Nav.Link ><Link className="text-decoration-none text-dark" to='/home'>Home</Link></Nav.Link>
                 </Nav>
             </Container>
         </Navbar>

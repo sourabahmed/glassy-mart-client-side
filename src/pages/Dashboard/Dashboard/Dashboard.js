@@ -17,23 +17,24 @@ import AddReview from '../AddReview/AddReview';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const Dashboard = () => {
-    const { user, admin } = useAuth();
+    const { user, admin, logOut } = useAuth();
     let { path, url } = useRouteMatch();
     return (
         <div className="row ">
             <DashBordNavigation></DashBordNavigation>
 
-            <div className="col-sm-12 col-lg-3 bg-light ">
+            <div className="col-sm-12 col-lg-3 bg-light p-5 ">
                 <h4>{user.displayName}</h4>
                 <h6>{user.email}</h6>
-                <Link to={`${url}/payment`}>Paymant</Link><br />
-                <Link to={`${url}/addReview`}>AddReview</Link><br />
-                <Link to={`${url}/myOrders`}>My Orders</Link> <br />
+                <button onClick={logOut} className="btn btn-danger mb-4">Logout</button> <br />
+                <Link className="text-decoration-none text-dark" to={`${url}/payment`}>Paymant</Link><br />
+                <Link className="text-decoration-none text-dark" to={`${url}/addReview`}>AddReview</Link><br />
+                <Link className="text-decoration-none text-dark" to={`${url}/myOrders`}>My Orders</Link> <br />
                 {admin &&
                     <div>
-                        <Link to={`${url}/addProduct`}>AddProdcut</Link> <br />
-                        <Link to={`${url}/makeAdmin`}>MakeAdmin</Link> <br />
-                        <Link to={`${url}/manageOrders`}>ManageOrders</Link>
+                        <Link className="text-decoration-none text-dark" to={`${url}/addProduct`}>AddProdcut</Link> <br />
+                        <Link className="text-decoration-none text-dark" to={`${url}/makeAdmin`}>MakeAdmin</Link> <br />
+                        <Link className="text-decoration-none text-dark" to={`${url}/manageOrders`}>ManageOrders</Link>
                     </div>}
             </div>
 

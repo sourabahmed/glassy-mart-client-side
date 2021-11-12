@@ -30,8 +30,8 @@ const handleDeleteOrder = id => {
     }
 }
     return (
-        <div className="m-2">
-            <h2>This is my orders</h2>
+        <div className="m-4">
+            <h2>Your orders</h2>
             <Table striped bordered hover>
                 <thead>
                     <tr>

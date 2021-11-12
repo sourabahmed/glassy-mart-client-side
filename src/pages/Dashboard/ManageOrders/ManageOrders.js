@@ -28,12 +28,11 @@ const handleDeleteOrder = id => {
         
 }
     return (
-        <div className="m-2">
+        <div className="m-4">
             <h2>This is my orders</h2>
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th>Product Name</th>
                         <th>Price</th>
@@ -45,7 +44,6 @@ const handleDeleteOrder = id => {
                     {
                         orders.map(order =>
                             <tr key={order._id}>
-                                <td>{order.index}</td>
                                 <td>{order.name}</td>
                                 <td>{order.productName}</td>
                                 <td>{order.price}</td>

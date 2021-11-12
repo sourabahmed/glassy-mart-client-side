@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { Link , useHistory, useLocation} from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
 
 const Login = () => {
     const { register, handleSubmit } = useForm();
-    const {logInUser} = useAuth();
+    const { logInUser } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -17,22 +17,21 @@ const Login = () => {
     return (
         <div>
             <Navigation></Navigation>
-
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <label>
-                    Email: <br />
-                    <input type="email" {...register("email")} />
-                </label>
-                <br/>
-                <label>
-                    Password: <br/>
-                    <input type="password" {...register("password")} />
-                </label>
-                <br/>
-                <Link to='/register'>New User? Please Register.</Link>
-                <br/>
-                <input type="submit" value="Login"/>
-            </form>
+            <div className="m-5 ">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <label>
+                        <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Email" {...register("email")} />
+                    </label>
+                    <br />
+                    <label className="m-3">
+                        <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="Password" {...register("password")} />
+                    </label>
+                    <br />
+                    <input className="btn btn-danger" type="submit" value="Login" />
+                    <br />
+                    <Link className="text-decoration-none" to='/register'>New User? Please Register.</Link>
+                </form>
+            </div>
         </div>
     );
 };
