@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
+import AddProduct from '../AddProduct/AddProduct';
 
 const Dashboard = () => {
     const {user} = useAuth();
@@ -19,14 +20,15 @@ const Dashboard = () => {
         <div className="row ">
             <DashBordNavigation></DashBordNavigation>
 
-            <div className="col-3 bg-danger py-5">
+            <div className="col-sm-12 col-lg-3 bg-light ">
                 <h4>{user.displayName}</h4>
                 <h6>{user.email}</h6>
                 <Link to={`${url}/payment`}>Paymant</Link><br />
-                <Link to={`${url}/myOrders`}>My Orders</Link>
+                <Link to={`${url}/myOrders`}>My Orders</Link> <br />
+                <Link to={`${url}/addProduct`}>AddProdcut</Link>
             </div>
 
-            <div className="col-9">
+            <div className="col-sm-12 col-lg-9">
                 <Switch>
                     <Route exact path={path}>
                         <MyOrders></MyOrders>
@@ -36,6 +38,9 @@ const Dashboard = () => {
                     </Route>
                     <Route path={`${path}/payment`}>
                         <Payment></Payment>
+                    </Route>
+                    <Route path={`${path}/addProduct`}>
+                        <AddProduct></AddProduct>
                     </Route>
 
                 </Switch>

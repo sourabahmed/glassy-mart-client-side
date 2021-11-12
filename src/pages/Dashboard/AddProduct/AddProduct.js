@@ -1,10 +1,9 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import Navigation from '../../Shared/Navigation/Navigation';
 
 
-const AddSunglass = () => {
+const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
@@ -23,7 +22,6 @@ const AddSunglass = () => {
     }
     return (
         <div>
-            <Navigation></Navigation>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Glass Name: <br />
@@ -47,10 +45,10 @@ const AddSunglass = () => {
                 <br/>
                 <Link to='/login'>Already Registered? Please Login.</Link>
                 <br/>
-                <input type="submit" value="Add" />
+                <input type="submit" value="Add Product" />
             </form>
         </div>
     );
 };
 
-export default AddSunglass;
+export default AddProduct;
