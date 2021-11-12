@@ -3,8 +3,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    background-color: rgba(14, 10, 10, 0.986);
-    color: rgb(219, 215, 215);
+    background-color: rgba(245, 237, 237, 0.986);
+    color: rgb(0, 0, 0);
 }
 .footer-property{
     margin: 10px;

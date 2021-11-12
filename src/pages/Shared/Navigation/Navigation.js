@@ -13,18 +13,17 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link >
-                            <Link to='/home'>Home</Link>
+                            <Link className="text-decoration-none text-dark" to='/home'>Home</Link>
                         </Nav.Link>
                         <Nav.Link >
-                            <Link to='/allProduct'>All-Product</Link>
+                            <Link className="text-decoration-none text-dark" to='/allProduct'>All-Product</Link>
                         </Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
                         <Nav.Link >
-                            {user.email && <Link to='/dashboard'>Dashboard</Link>}
+                            {user.email && <Link className="text-decoration-none text-dark" to='/dashboard'>Dashboard</Link>}
                         </Nav.Link>
-                        <Nav.Link>{user.displayName}</Nav.Link>
+                        <Nav.Link><h5>{user.displayName}</h5></Nav.Link>
                         {/* <Nav.Link >
                             <Link to='/login'>Login</Link>
                         </Nav.Link> */}
@@ -32,7 +31,7 @@ const Navigation = () => {
 
                             {
                                 user.email ? <button onClick={logOut} className="btn btn-danger">Logout</button> :
-                                    <button className="btn btn-danger"><Link to="/login">Login</Link></button>
+                                    <Link to="/login"><button className="btn btn-danger">Login </button></Link>
                             }
 
 

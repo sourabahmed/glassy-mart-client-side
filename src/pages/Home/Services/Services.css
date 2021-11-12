@@ -3,7 +3,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
 
-    margin: 100px;
+    margin: 50px 100px;
 }
 @media only screen and (max-width:668px) {
     .services{
