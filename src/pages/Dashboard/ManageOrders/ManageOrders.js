@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import useAuth from '../../../hooks/useAuth';
 
-const MyOrders = () => {
-    const { user } = useAuth();
+
+const ManageOrders = () => {
+    
     const [orders, setOrders] = useState([]);
     const [isDeleted, setIsDeleted] = useState(false);
 
@@ -14,9 +14,7 @@ const MyOrders = () => {
     },[isDeleted])
 
 const handleDeleteOrder = id => {
-    const sure = window.confirm('are you sure you want to delte this order')
-    if(sure){
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
+    fetch(`http://localhost:5000/deleteOrder/${id}`, {
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json'
@@ -25,9 +23,9 @@ const handleDeleteOrder = id => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
+            setIsDeleted(true);
         })
-        setIsDeleted(true);
-    }
+        
 }
     return (
         <div className="m-2">
@@ -45,7 +43,7 @@ const handleDeleteOrder = id => {
                 </thead>
                 <tbody>
                     {
-                        orders.filter(data => data?.email === user?.email).map(order =>
+                        orders.map(order =>
                             <tr key={order._id}>
                                 <td>{order.index}</td>
                                 <td>{order.name}</td>
@@ -62,4 +60,4 @@ const handleDeleteOrder = id => {
     );
 };
 
-export default MyOrders;
+export default ManageOrders;

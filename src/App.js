@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import AuthProvider from './context/AuthContext/AuthContext';
 import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
-import AddSunglass from './pages/Home/AddSunglass/AddSunglass';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
@@ -31,9 +30,6 @@ function App() {
             </Route>
             <PrivateRoute path='/myorders'>
               <MyOrders></MyOrders>
-            </PrivateRoute>
-            <PrivateRoute path='/addSunglass'>
-              <AddSunglass></AddSunglass>
             </PrivateRoute>
             <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>

@@ -12,9 +12,12 @@ import {
 import MyOrders from '../MyOrders/MyOrders';
 import Payment from '../Payment/Payment';
 import AddProduct from '../AddProduct/AddProduct';
+import ManageOrders from '../ManageOrders/ManageOrders';
+import AddReview from '../AddReview/AddReview';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 
 const Dashboard = () => {
-    const {user} = useAuth();
+    const { user, admin } = useAuth();
     let { path, url } = useRouteMatch();
     return (
         <div className="row ">
@@ -24,8 +27,14 @@ const Dashboard = () => {
                 <h4>{user.displayName}</h4>
                 <h6>{user.email}</h6>
                 <Link to={`${url}/payment`}>Paymant</Link><br />
+                <Link to={`${url}/addReview`}>AddReview</Link><br />
                 <Link to={`${url}/myOrders`}>My Orders</Link> <br />
-                <Link to={`${url}/addProduct`}>AddProdcut</Link>
+                {admin &&
+                    <div>
+                        <Link to={`${url}/addProduct`}>AddProdcut</Link> <br />
+                        <Link to={`${url}/makeAdmin`}>MakeAdmin</Link> <br />
+                        <Link to={`${url}/manageOrders`}>ManageOrders</Link>
+                    </div>}
             </div>
 
             <div className="col-sm-12 col-lg-9">
@@ -41,6 +50,15 @@ const Dashboard = () => {
                     </Route>
                     <Route path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
+                    </Route>
+                    <Route path={`${path}/manageOrders`}>
+                        <ManageOrders></ManageOrders>
+                    </Route>
+                    <Route path={`${path}/addReview`}>
+                        <AddReview></AddReview>
+                    </Route>
+                    <Route path={`${path}/makeAdmin`}>
+                        <MakeAdmin></MakeAdmin>
                     </Route>
 
                 </Switch>
