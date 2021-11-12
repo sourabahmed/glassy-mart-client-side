@@ -24,7 +24,10 @@ const handleDeleteOrder = id => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            // console.log(data);
+            if(data.acknowledged){
+                alert('order deleted')
+            }
         })
         setIsDeleted(true);
     }

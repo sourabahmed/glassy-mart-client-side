@@ -15,7 +15,9 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if(data.insertedId){
+                    alert('Review added')
+                }
                 
             })
     }
