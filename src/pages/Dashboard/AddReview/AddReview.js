@@ -4,19 +4,19 @@ import useAuth from '../../../hooks/useAuth'
 
 const AddReview = () => {
     const {user} = useAuth();
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/review', {
+        fetch('https://protected-plateau-17265.herokuapp.com/review', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'content-Type': 'application/json'
             },
             body: JSON.stringify(data)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                reset(onSubmit);
+                
             })
     }
     return (

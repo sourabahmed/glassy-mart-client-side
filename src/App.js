@@ -28,9 +28,9 @@ function App() {
             <Route path='/register'>
               <Register></Register>
             </Route>
-            <PrivateRoute path='/allProduct'>
+            <Route path='/allProduct'>
               <AllProduct></AllProduct>
-            </PrivateRoute>
+            </Route>
             <PrivateRoute path='/purchase/:purchaseId'>
               <Purchase></Purchase>
             </PrivateRoute>

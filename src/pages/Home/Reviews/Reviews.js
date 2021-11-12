@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import Review from '../Review/Review';
+import './Reviews.css'
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://protected-plateau-17265.herokuapp.com/review')
         .then(res => res.json())
         .then(data => setReviews(data))
     },[])
     return (
         <div>
             <h2>This is Reviews</h2>
-            <div>
+            <div className="reviews">
                 {
-                    reviews.map(review => <h1>{review.name}</h1>)
+                    reviews.map(review => <Review
+                    key={review._id}
+                    review={review}
+                    ></Review>)
                 }
             </div>
         </div>

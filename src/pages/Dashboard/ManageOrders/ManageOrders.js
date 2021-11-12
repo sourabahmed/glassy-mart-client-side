@@ -8,13 +8,13 @@ const ManageOrders = () => {
     const [isDeleted, setIsDeleted] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://protected-plateau-17265.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     },[isDeleted])
 
 const handleDeleteOrder = id => {
-    fetch(`http://localhost:5000/deleteOrder/${id}`, {
+    fetch(`https://protected-plateau-17265.herokuapp.com/deleteOrder/${id}`, {
             method: 'DELETE',
             headers:{
                 'Content-Type': 'application/json'

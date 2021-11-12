@@ -12,14 +12,14 @@ const Purchase = () => {
     const [service, setService] = useState({});
     const { register, handleSubmit } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:5000/singleService/${purchaseId}`)
+        fetch(`https://protected-plateau-17265.herokuapp.com/singleService/${purchaseId}`)
             .then(res => res.json())
             .then(data => setService(data));
     }, [])
 
    
     const onSubmit = data => {
-        fetch('http://localhost:5000/orders', {
+        fetch('https://protected-plateau-17265.herokuapp.com/orders', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'

@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/services', {
+        fetch('https://protected-plateau-17265.herokuapp.com/services', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
