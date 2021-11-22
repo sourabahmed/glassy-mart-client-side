@@ -10,9 +10,9 @@ const Footer = () => {
                     <p>We are one of the best service provider in Bangladesh.</p>
                     <h3>Follew us</h3>
                     <div className="fs-1">
-                        <i class="fab fa-facebook-square"></i>
-                        <i class="fab mx-4 fa-instagram-square"></i>
-                        <i class="fab fa-twitter-square"></i>
+                        <i className="fab fa-facebook-square"></i>
+                        <i className="fab mx-4 fa-instagram-square"></i>
+                        <i className="fab fa-twitter-square"></i>
                     </div>
                 </div>
                 <div className="footer-property">

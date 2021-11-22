@@ -12,30 +12,19 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link >
-                            <Link className="text-decoration-none text-dark" to='/home'>Home</Link>
-                        </Nav.Link>
-                        <Nav.Link >
-                            <Link className="text-decoration-none text-dark" to='/allProduct'>All-Product</Link>
-                        </Nav.Link>
+                        <div>
+                            <Link className="text-decoration-none text-dark me-4" to='/home'>Home</Link>
+                            <Link className="text-decoration-none text-dark " to='/allProduct'>All-Product</Link>
+                        </div>
                     </Nav>
-                    <Nav>
-                        <Nav.Link >
-                            {user.email && <Link className="text-decoration-none text-dark" to='/dashboard'>Dashboard</Link>}
-                        </Nav.Link>
-                        <Nav.Link><h5>{user.displayName}</h5></Nav.Link>
-                        {/* <Nav.Link >
-                            <Link to='/login'>Login</Link>
-                        </Nav.Link> */}
-                        <Nav.Link >
+                    <Nav className="display-flex align-items-center justify-content-center p-2">
+                        {user.email && <Link className="text-decoration-none text-dark" to='/dashboard'>Dashboard</Link>}
 
-                            {
-                                user.email ? <button onClick={logOut} className="btn btn-danger">Logout</button> :
-                                    <Link to="/login"><button className="btn btn-danger">Login </button></Link>
-                            }
-
-
-                        </Nav.Link>
+                        <span className="mx-4 text-danger">{user.displayName}</span>
+                        {
+                            user.email ? <button onClick={logOut} className="btn btn-danger">Logout</button> :
+                                <Link to="/login"><button className="btn btn-danger">Login </button></Link>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>
