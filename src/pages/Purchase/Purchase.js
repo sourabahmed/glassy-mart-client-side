@@ -39,8 +39,8 @@ const Purchase = () => {
     return (
         <div>
             <Navigation></Navigation>
-            <div  className="purchase">
-                <div>
+            <div  className="purchase row">
+                <div className="col-sm-12 col-lg-8">
                     <div className="details">
                         <div className="img">
                             <img className="img-fluid" src={service?.url} alt="" />
@@ -54,7 +54,7 @@ const Purchase = () => {
                     </div>
                 </div>
 
-                <div className="order">
+                <div className="order col-sm-12 col-lg-4">
                 <h2 className="m-3">Order Now</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <input defaultValue={user?.displayName} className="form-control" id="exampleFormControlInput1" {...register("name")} /> <br />

@@ -14,7 +14,7 @@ const Reviews = () => {
             <h2>What client say <br /> about us</h2>
             <div className="reviews">
                 {
-                    reviews.map(review => <Review
+                    reviews.slice(0, 8).map(review => <Review
                     key={review._id}
                     review={review}
                     ></Review>)

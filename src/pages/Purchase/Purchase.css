@@ -1,21 +1,15 @@
 .purchase{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-    margin: 20px 100px;
+    margin: 70px 50px;
 }
 .details{
-    width: 70%;
-    margin: 0 auto;
+    width: 95%;
+    padding: 10px;
+    margin-top: 50px;
     box-shadow: 0 0 5px 2px rgb(129, 122, 122);
+    display: flex;
 }
 .img{
-    
     margin: 0 auto;
-
-}
-.order{
-    margin-top: 50px;
 }
  
 @media only screen and (max-width:668px) {
@@ -26,7 +20,7 @@
     .details{
         width: 100%;
         margin-bottom: 50px;
-    }
+        flex-direction: column;    }
     .order{
         margin-top: 10px;
     }

@@ -13,10 +13,10 @@ const Services = () => {
 
     return (
         <div>
-            <h2 className="mt-5">Products</h2>
+            <h2 className="mt-5"> <i className="fas fa-glasses"></i> Products</h2>
             <div className="services">
                 {
-                    services?.slice(0, 6).map(service => <Service
+                    services?.slice(0, 8).map(service => <Service
                         service={service}
                         key={service._id}
                     ></Service>)
