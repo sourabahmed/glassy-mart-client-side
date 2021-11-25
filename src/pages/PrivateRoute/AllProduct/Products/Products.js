@@ -5,13 +5,14 @@ import './Products.css'
 const Products = () => {
     const [services, setServices] = useState([]);
     console.log(services);
+    
     useEffect(() => {
         fetch('https://protected-plateau-17265.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     return (
-        <div>
+        <div>        
             <div className="products">
                 {
                     services?.map(service => <Product

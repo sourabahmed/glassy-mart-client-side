@@ -11,15 +11,15 @@ const Exceptional = () => {
                     <h4>On time <br /> Delivery</h4>
                 </div>
                 <div className="exception">
-                    <i class="fas fa-hand-holding-usd fs-1"></i>
+                    <i className="fas fa-hand-holding-usd fs-1"></i>
                     <h4>Cash On <br /> Delivery</h4>
                 </div>
                 <div className="exception">
-                    <i class="fas fa-money-bill-alt fs-1"></i>
+                    <i className="fas fa-money-bill-alt fs-1"></i>
                     <h4>100% Cash <br /> Back</h4>
                 </div>
                 <div className="exception">
-                    <i class="fas fa-exchange-alt fs-1"></i>
+                    <i className="fas fa-exchange-alt fs-1"></i>
                     <h4>Exchange <br /> Available</h4>
                 </div>
             </div>
