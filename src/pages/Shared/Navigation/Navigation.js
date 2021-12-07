@@ -12,10 +12,8 @@ const Navigation = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <div>
                             <Link className="text-decoration-none text-dark me-4" to='/home'>Home</Link>
                             <Link className="text-decoration-none text-dark " to='/allProduct'>All-Product</Link>
-                        </div>
                     </Nav>
                     <Nav className="display-flex align-items-center justify-content-center p-2">
                         {user.email && <Link className="text-decoration-none text-dark" to='/dashboard'>Dashboard</Link>}

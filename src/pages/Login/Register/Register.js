@@ -51,7 +51,7 @@ const Register = () => {
                                 <input type="submit" className="btn btn-primary btn-block" value="register" />
 
                                 <div className="d-flex justify-content-around align-items-center mb-1">
-                                    <Link to="/login"><button type="button" className="btn btn-link fs-5">Already Register? Login.</button></Link>
+                                    <Link to="/login"><button type="button" className="btn btn-link fs-5">Already Registered? Login.</button></Link>
                                 </div>
 
                                 <div>
